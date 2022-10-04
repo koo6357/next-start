@@ -36,6 +36,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'prettier/prettier': ['error', { singleQuote: true }],
+    '@typescript-eslint/ban-types': 'off',
   },
   overrides: [
     {
