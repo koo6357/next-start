@@ -1,16 +1,36 @@
 import { createWrapper } from 'next-redux-wrapper';
+import {
+  combineReducers,
+  configureStore,
+  PreloadedState,
+} from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import logger from 'redux-logger';
 
-import { configureStore } from '@reduxjs/toolkit';
+import appReducer from '@/modules/app/slice';
 
-import rootReducer from './reducers';
+const rootReducer = combineReducers({
+  app: appReducer,
+});
 
-const createStore = () => {
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   const store = configureStore({
     reducer: rootReducer,
+    preloadedState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
     devTools: true,
   });
 
   return store;
 };
 
-export const wrapper = createWrapper(createStore, { debug: true });
+const makeStore = () => setupStore();
+
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore['dispatch'];
+
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+export const wrapper = createWrapper(makeStore, { debug: true });
