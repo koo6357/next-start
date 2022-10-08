@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.10.4",
     "@reduxjs/toolkit": "^1.8.5",
     "@types/lodash-es": "^4.17.6",
+    "@types/redux-logger": "^3.0.9",
     "classnames": "^2.3.2",
     "fxjs": "^0.21.3",
     "lodash-es": "^4.17.21",
