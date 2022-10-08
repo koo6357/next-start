@@ -15,6 +15,7 @@
     "incremental": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
+    "declaration": false,
     "baseUrl": "./src",
     "paths": {
       "@/components/*": ["components/*"],
