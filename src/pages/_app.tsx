@@ -4,6 +4,8 @@ import { NextPage } from 'next';
 
 import GlobalStyle from '@/styles/GlobalStyle';
 import Layout from '../layout/Layout';
+import { wrapper } from '@/modules/store';
+import { Provider } from 'react-redux';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -14,13 +16,14 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
+  const { store, props } = wrapper.useWrappedStore(pageProps);
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
 
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
-      {getLayout(<Component {...pageProps} />)}
-    </>
+      {getLayout(<Component {...props} />)}
+    </Provider>
   );
 }
 
