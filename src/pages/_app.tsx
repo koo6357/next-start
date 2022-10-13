@@ -6,7 +6,7 @@ import { DefaultSeo } from 'next-seo';
 
 import { wrapper } from '@/modules/store';
 import { SEO } from '../../next-seo.config';
-import { ThemeProvider } from '@/styles/ThemeProvider';
+import { ThemeProvider } from '@/styles/themeProvider';
 import Layout from '@/components/layout/Layout';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

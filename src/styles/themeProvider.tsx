@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeProvider as EmotionStyleProvider } from '@emotion/react';
 
 import { useAppSelector } from '@/modules/hooks';
-import GlobalStyle from '@/styles/GlobalStyle';
+import GlobalStyle from '@/styles/globalStyle';
 import { colors, themes } from '@/styles/theme';
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
