@@ -7,6 +7,7 @@ import {
 import logger from 'redux-logger';
 
 import appReducer from '@/modules/app/slice';
+import { isProduction } from '../constants/common';
 
 const rootReducer = combineReducers({
   app: appReducer,
@@ -16,7 +17,10 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   const store = configureStore({
     reducer: rootReducer,
     preloadedState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    middleware: (getDefaultMiddleware) =>
+      isProduction
+        ? getDefaultMiddleware().concat(logger)
+        : getDefaultMiddleware(),
     devTools: true,
   });
 

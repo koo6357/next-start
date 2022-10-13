@@ -1,5 +1,5 @@
 {
-  "name": "cryptocurrency",
+  "name": "next-start",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,12 +14,15 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@reduxjs/toolkit": "^1.8.6",
+    "@types/axios": "^0.14.0",
     "@types/lodash-es": "^4.17.6",
     "@types/redux-logger": "^3.0.9",
+    "axios": "^1.1.2",
     "classnames": "^2.3.2",
     "lodash-es": "^4.17.21",
     "next": "^12.3.1",
     "next-redux-wrapper": "^8.0.0",
+    "next-seo": "^5.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.4"

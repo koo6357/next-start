@@ -1,8 +1,16 @@
-import { Global } from '@emotion/react';
+import { css, Global } from '@emotion/react';
+
 import resetStyle from '@/styles/resetStyle';
 
-interface Props {}
-
-export default function GlobalStyle(props: Props) {
-  return <Global styles={resetStyle} />;
+export default function GlobalStyle() {
+  return (
+    <Global
+      styles={css`
+        ${resetStyle};
+        body {
+          font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+        }
+      `}
+    />
+  );
 }

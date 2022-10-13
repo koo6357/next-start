@@ -1,30 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface AppStateType {
-  sidebar: boolean;
+  themeMode: 'light' | 'dark';
 }
 
 const initialState: AppStateType = {
-  sidebar: false,
+  themeMode: 'light',
 };
 
 const { actions, reducer } = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    updateState: (state, action: PayloadAction<{ [x: string]: unknown }>) => {
-      state = {
-        ...state,
-        ...action.payload,
-      };
-    },
-    toggleSidebar(state) {
-      state.sidebar = !state.sidebar;
+    toggleThemeMode(state) {
+      state.themeMode = state.themeMode === 'light' ? 'dark' : 'light';
     },
   },
 });
 
-export const { updateState, toggleSidebar } = actions;
+export const { toggleThemeMode } = actions;
 
 export default reducer;

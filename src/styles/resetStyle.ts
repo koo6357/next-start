@@ -125,8 +125,23 @@ const resetStyle = css`
     border-collapse: collapse;
     border-spacing: 0;
   }
-  div {
+  html,
+  body,
+  #__next {
+    height: 100%;
+  }
+  *,
+  *::after,
+  *::before {
     box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    vertical-align: top;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `;
 
