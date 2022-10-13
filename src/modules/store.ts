@@ -19,8 +19,8 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     preloadedState,
     middleware: (getDefaultMiddleware) =>
       isProduction
-        ? getDefaultMiddleware().concat(logger)
-        : getDefaultMiddleware(),
+        ? getDefaultMiddleware()
+        : getDefaultMiddleware().concat(logger),
     devTools: true,
   });
 
