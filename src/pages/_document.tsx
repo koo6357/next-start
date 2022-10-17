@@ -22,7 +22,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" href="/public/favicon.ico" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=block"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=optional"
             rel="stylesheet"
           />
         </Head>

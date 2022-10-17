@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import cn from 'classnames';
+import Image from 'next/image';
 
 import { useAppDispatch, useAppSelector } from '@/modules/hooks';
 import { Easing } from '@/styles/utils';
@@ -17,17 +18,23 @@ export const ThemeModeCtrl = () => {
       onClick={handleClickMode}
       className={cn('ThemeMode', { dark: themeMode === 'dark' })}
     >
-      <div className="icon-dark-mode">
-        <img
-          src="https://woehmsxrhrkdhblnhdra.supabase.co/storage/v1/object/sign/blog/moon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJibG9nL21vb24ucG5nIiwiaWF0IjoxNjY1MjY5NjkwLCJleHAiOjE5ODA2Mjk2OTB9.Lz92DL_yTt3p-EnTtamjDUmTcnCvItbG45_fDFMi9Hw"
-          alt="다크테마"
-        />
+      <div className="btn-mode-dark">
+        <div className="icon-img">
+          <Image
+            src="https://woehmsxrhrkdhblnhdra.supabase.co/storage/v1/object/sign/blog/moon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJibG9nL21vb24ucG5nIiwiaWF0IjoxNjY1MjY5NjkwLCJleHAiOjE5ODA2Mjk2OTB9.Lz92DL_yTt3p-EnTtamjDUmTcnCvItbG45_fDFMi9Hw"
+            layout={'fill'}
+            alt="다크테마"
+          />
+        </div>
       </div>
-      <div className="icon-light-mode">
-        <img
-          src="https://woehmsxrhrkdhblnhdra.supabase.co/storage/v1/object/sign/blog/sun.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJibG9nL3N1bi5wbmciLCJpYXQiOjE2NjUyNjk1MDYsImV4cCI6MTk4MDYyOTUwNn0.4A-wWXGFfqIIBp2Vf_1ld3pZhhCeo9q8d1v6acWXt8A"
-          alt="라이트테마"
-        />
+      <div className="btn-mode-light">
+        <div className="icon-img">
+          <Image
+            src="https://woehmsxrhrkdhblnhdra.supabase.co/storage/v1/object/sign/blog/sun.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJibG9nL3N1bi5wbmciLCJpYXQiOjE2NjUyNjk1MDYsImV4cCI6MTk4MDYyOTUwNn0.4A-wWXGFfqIIBp2Vf_1ld3pZhhCeo9q8d1v6acWXt8A"
+            layout={'fill'}
+            alt="라이트테마"
+          />
+        </div>
       </div>
       <Dot />
     </Container>
@@ -47,23 +54,27 @@ const Container = styled.div`
   * {
     user-select: none;
   }
-  [class^='icon-'] {
+  [class^='btn-mode'] {
     position: absolute;
     top: 0;
     bottom: 0;
     display: flex;
     align-items: center;
-    img {
+  }
+  .btn-mode-dark {
+    left: 5px;
+    .icon-img {
+      position: relative;
       width: 17px;
+      height: 17px;
     }
   }
-  .icon-dark-mode {
-    left: 5px;
-  }
-  .icon-light-mode {
+  .btn-mode-light {
     right: 5px;
-    img {
+    .icon-img {
+      position: relative;
       width: 18px;
+      height: 18px;
     }
   }
 `;
