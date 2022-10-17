@@ -13,6 +13,9 @@ export const Home = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 4000px;
+  background: rgba(17, 136, 255, 0.19);
+`;
 
 export default Home;
